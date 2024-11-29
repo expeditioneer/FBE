@@ -5,9 +5,9 @@ on:
     branches: ['release']
 
 env:
-  REGISTRY: docker.io
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
+  REGISTRY: docker.io
 
 permissions:
   id-token: write
