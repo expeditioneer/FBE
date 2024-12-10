@@ -2,4 +2,4 @@
 
 # Workaround, see
 # https://bugs.gentoo.org/680456
-FEATURES="protect-owned -collision-protect -ipc-sandbox -network-sandbox -pid-sandbox" emerge $@
+FEATURES="protect-owned -collision-protect -ipc-sandbox -network-sandbox -pid-sandbox" emerge --quiet-build y $@
