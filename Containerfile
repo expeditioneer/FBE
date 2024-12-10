@@ -17,3 +17,5 @@ RUN emerge_wrapper app-eselect/eselect-repository  app-portage/gentoolkit dev-ut
 
 RUN eselect profile set default/linux/arm64/23.0/hardened/selinux/systemd && \
     eselect news read all && eselect news purge
+
+RUN cat /etc/portage/make.conf
