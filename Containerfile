@@ -4,7 +4,6 @@ FROM gentoo/stage3:systemd
 
 COPY --from=portage /var/db/repos/gentoo /var/db/repos/gentoo
 
-COPY config/fluentoobinhost.conf /etc/portage/binrepos.conf/fluentoobinhost.conf
 RUN rm /etc/portage/binrepos.conf/gentoobinhost.conf && \
     getuto
 

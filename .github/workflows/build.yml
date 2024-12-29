@@ -16,7 +16,7 @@ permissions:
 
 jobs:
   build:
-    name: Build fluentoo-containerized-build-environment container image
+    name: Build fluentoo-build-environment container image
     runs-on: [self-hosted, Linux, ARM64]
     steps:
       - name: Checkout
