@@ -7,7 +7,7 @@ on:
 
 env:
   # github.repository as <account>/<repo>
-  IMAGE_NAME: ${{ github.repository }}
+  IMAGE_NAME: expeditioneer/fluentoo-build-environment
   REGISTRY: docker.io
 
 permissions:
@@ -16,13 +16,9 @@ permissions:
 
 jobs:
   build:
-    name: Build FBE container image
-    runs-on: [self-hosted, linux, ARM64]
+    name: Build fluentoo-containerized-build-environment container image
+    runs-on: [self-hosted, Linux, ARM64]
     steps:
-      - name: Lowercase IMAGE_NAME environment variable
-        run: |
-          echo "IMAGE_NAME=${IMAGE_NAME@L}" >> "${GITHUB_ENV}"
-        
       - name: Checkout
         uses: actions/checkout@v4
 
