@@ -15,5 +15,11 @@ RUN sed -i -e 's/COMMON_FLAGS=.*/COMMON_FLAGS="-mcpu=cortex-a72 -ftree-vectorize
 
 RUN emerge_wrapper app-eselect/eselect-repository app-portage/gentoolkit dev-util/pkgcheck dev-util/pkgdev
 
-RUN eselect profile set default/linux/arm64/23.0/hardened/selinux/systemd && \
-    eselect news read all && eselect news purge
+RUN emerge_wrapper dev-vcs/git && \
+    eselect repository add fluentoo git git@github.com:fluentoo/fluentoo-overlay.git && \
+    emaint sync --repo fluentoo
+
+RUN eselect profile set custom/linux/arm64/23.0/musl/hardened/selinux/systemd && \
+    eselect news list && \
+    eselect news read all > /dev/null 2&>1 && \
+    eselect news purge
