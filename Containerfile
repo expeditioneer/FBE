@@ -17,9 +17,9 @@ RUN emerge_wrapper app-eselect/eselect-repository app-portage/gentoolkit dev-uti
 
 RUN emerge_wrapper dev-vcs/git && \
     eselect repository add fluentoo git https://github.com/fluentoo/fluentoo-overlay.git && \
-    emaint sync --repo fluentoo
+    emaint sync --repo fluentoo && \
+    eselect profile set fluentoo:custom/linux/arm64/23.0/musl/hardened/selinux/systemd
 
-RUN eselect profile set custom/linux/arm64/23.0/musl/hardened/selinux/systemd && \
-    eselect news list && \
+RUN eselect news list && \
     eselect news read all > /dev/null 2&>1 && \
     eselect news purge
