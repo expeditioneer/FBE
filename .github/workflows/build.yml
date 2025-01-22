@@ -4,6 +4,8 @@ name: Create and publish Container Image
 on:
   push:
     branches: ['release']
+  schedule:
+    - cron: "30 23 * * SUN"
 
 env:
   # github.repository as <account>/<repo>
