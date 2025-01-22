@@ -21,5 +21,5 @@ RUN emerge_wrapper dev-vcs/git && \
     eselect profile set fluentoo:custom/linux/arm64/23.0/musl/hardened/selinux/systemd
 
 RUN eselect news list && \
-    eselect news read all > /dev/null 2&>1 && \
+    eselect news read --quiet all && \
     eselect news purge
